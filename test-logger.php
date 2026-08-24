@@ -7,7 +7,7 @@ $user_email = "root" ?? null;
 $success = logActivity($pdo, $user_id, $user_email,'test_activity_', 'success');
 
 if($success){
-    echo "Activity log insertedsuccessfully.";
+    echo "Activity log inserted successfully.";
 } else {
     echo "Failed to insert activity log";
 }
