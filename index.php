@@ -1,40 +1,42 @@
 <?php
-require_once 'config/config.php';
 
-$user_ID = $_SESSION['user_id'] ?? null;
-$user_email = $_SESSION['user_email'] ?? null;
+require_once('config/config.php');
+
+$user_id = "root" ?? null;
+$user_email = "root" ?? null;
 
 $buttons = [
-    'login',
-    'logout',
-    'create Record',
+    'Login',
+    'Logout',
+    'Create Record',
     'Update Record',
     'Delete Record',
     'View Record',
     'Upload File',
     'Download',
-    'Serch',
-    'Generate Report',
+    'Generate Report'
 ];
-
 ?>
 
-<table border="1 cellpadding=" 10">
+<table border="1" cellpadding="10">
     <tr>
         <th>Action</th>
-        <th>Log Activity</th>
+        <th>Test</th>
     </tr>
 
     <?php foreach ($buttons as $button): ?>
         <tr>
             <td><?= htmlspecialchars($button) ?></td>
-            <td>
 
+            <td>
                 <form method="POST">
-                    <input type="hidden" name="action" value="<?= htmlspecialchars($button) ?>">
+                    <input 
+                        type="hidden"  name="action"
+                         value="<?= htmlspecialchars($button) ?>"
+                    >
+
                     <button type="submit">Test</button>
                 </form>
-
             </td>
         </tr>
     <?php endforeach; ?>
@@ -42,26 +44,34 @@ $buttons = [
 </table>
 
 <?php
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $action = $_POST['action'] ?? "test_activity";
+If($_SERVER['REQUEST_METHOD'] === 'POST'){
+        $action = $_POST ['action'] ?? "test_activity";
 
-    $status = random_int(0, 1) === 1 ? 'Success' : 'Failed';
+       $status = 'success';
 
-    $succes = logActivity(
-        $pdo,
-        $user_ID,
-        $user_email,
-        $action,
-        $status
-    );
+        $success =  LogActivity(
+            $pdo,
+            $user_id,
+            $user_email,
+            $action,
+            $status,
 
-    if ($succes) {
+
+
+        );
+
+        if ($success){
+
         echo "<p>Activity: " . htmlspecialchars($action) .
-            " Status: " . htmlspecialchars($status) .
-            " logged successfully.</p>";
-    } else {
-        echo "<p>Failed to log activity.</p>";
-    }
+                " Status: " . htmlspecialchars($status) .
+                "Log inserted sucessfully </p>";
+
+        }else{
+            echo "<p>failed to insert activity log</p>";
+
+        }
+
 }
+
 
 ?>

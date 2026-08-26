@@ -14,7 +14,7 @@ $success = logActivity(
     'success'
 );
 
-if ($success) {
+if ($success) { 
     echo "Activity log inserted successfully.";
 } else {
     echo "Failed to insert activity log.";
