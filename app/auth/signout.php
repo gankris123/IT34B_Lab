@@ -1,14 +1,11 @@
 <?php
 require_once __DIR__ . '/../../config/config.php';
 
-$_SESSION = [];
-session_unset();
+if(isset($_SESSION['user_id'])){
+    logActivity($pdo,$_SESSION['user_id'],$_SESSION['user_email'],'login','success');
+}
 
-$params = session_get_cookie_params();
-setcookie(session_name(), '', time() - 3600,
-    $params['path'], $params['domain'],
-    $params['secure'], $params['httponly']
-);
+$_SESSION = [];
 
 session_destroy();
 

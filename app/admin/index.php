@@ -1,3 +1,24 @@
+<?php
+require '../../config/config.php';
+require '../../config'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
