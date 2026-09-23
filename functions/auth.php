@@ -1,10 +1,5 @@
 <?php
 
-function redirect($path){
-    header("location: " . BASE_URL . $path);
-    exit;
-}
-
 function loginUser($pdo, $login, $password)
 {
     $sql = "
