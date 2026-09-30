@@ -28,7 +28,8 @@ function startUserSession($pdo)
 
 // End user session
 
-function endUsersession($pdo);
+function endUsersession($pdo){
+
     if(!isset($_SESSION['session_id'])){
         return false;
     }
