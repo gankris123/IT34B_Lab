@@ -34,7 +34,6 @@ requireRole('admin');
                     <th>Status</th>
                     <th>client ip</th>
                     <th>User Agent</th>
-                    <th>Created At</th>
                     <th>Date Time</th>
 
 
