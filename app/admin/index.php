@@ -1,6 +1,5 @@
 <?php
-require '../../config/config.php';
-require '../../config/functions.php';
+require_once '../../config/config.php';
 
 requireRole('admin');
 
@@ -24,7 +23,7 @@ requireRole('admin');
     </head>
     <body>
         <h1>Welcome Admin</h1>
-        <a href=" ../../auth/signout.php">Sign Out</a>
+        <a href="../auth/signout.php">Sign Out</a>
         <table id="example" class="table table-striped table-bordered" style="width:auto">
             <thead>
                 <tr>
@@ -35,7 +34,6 @@ requireRole('admin');
                     <th>Status</th>
                     <th>client ip</th>
                     <th>User Agent</th>
-                    <th>Created At</th>
                     <th>Date Time</th>
 
 

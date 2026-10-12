@@ -25,7 +25,7 @@ function logActivity($pdo, $user_id, $user_email, $action, $status = 'success')
                 user_email,
                 activity_log_action,
                 activity_log_status,
-                activity_log_client_ip,
+                 activity_log_ip_address,
                 activity_log_user_agent
             ) VALUES (?,?,?,?,?,?)
         ");
