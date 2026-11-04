@@ -134,7 +134,7 @@
                 'Session ID', 'User ID', 'Username', 'Email',
                 'Role', 'Session Start', 'Session End', 'Duration',
             ],
-            $rows
+            $rows 
         );
     }
 }
