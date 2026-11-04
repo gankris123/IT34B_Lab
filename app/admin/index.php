@@ -81,7 +81,7 @@
         );
     }
 
-    if ($section === 'user-sessions') {
+    if ($section === 'user-sessions') 
 
         $stmt = $pdo->query("
             SELECT
@@ -99,8 +99,20 @@
         ");
         $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+          logActivity(
+            $pdo,
+            $_SESSION['user_id'],
+            $_SESSION['user_email'],
+            'export_user_sessions',
+            'success'
+        );
+
+    {
+
         foreach ($rows as &$r) {
+
             $r['session_end'] = $r['session_end'] ?: 'Active';
+
             if ($r['session_duration'] !== null) {
                 $s       = (int) $r['session_duration'];
                 $hours   = floor($s / 3600);
@@ -115,14 +127,6 @@
             }
         }
         unset($r);
-
-        logActivity(
-            $pdo,
-            $_SESSION['user_id'],
-            $_SESSION['user_email'],
-            'export_user_sessions',
-            'success'
-        );
 
         exportCsv(
             'user_sessions',
