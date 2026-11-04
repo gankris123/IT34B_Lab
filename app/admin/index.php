@@ -75,7 +75,9 @@
 
         <?php if ($section === 'activity-logs'): ?>
 
-            <h4>Activity Logs</h4>
+            <h4>Activity Logs
+            <a href="index.php?section=activity-logs&amp;action=export">Export CSV</a>
+        </h4>
 
             <table id="activityTable" class="table table-bordered table-sm">
 
@@ -141,7 +143,9 @@
 
         <?php if ($section === 'user-sessions'): ?>
 
-            <h4>User Sessions</h4>
+                  <h4>User Sessions
+            <a href="index.php?section=user-sessions&amp;action=export">Export CSV</a>
+        </h4>
 
             <table id="sessionTable" class="table table-bordered table-sm">
 
