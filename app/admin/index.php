@@ -121,7 +121,7 @@
                 $r['session_duration'] = sprintf(
                     '%02d hr %02d min %02d sec',
                     $hours, $minutes, $seconds
-                );
+                ); 
             } else {
                 $r['session_duration'] = 'Active';
             }
@@ -166,6 +166,7 @@
             <a href="index.php?section=activity-logs">Activity Logs |</a>
             <a href="index.php?section=user-sessions">User Sessions |</a>
         </nav>
+        
 
         <?php if ($section === 'activity-logs'): ?>
 
