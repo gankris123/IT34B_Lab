@@ -5,12 +5,13 @@ require_once __DIR__ . ('/../functions/activity.php');
 require_once __DIR__ . ('/../functions/auth.php');
 require_once __DIR__ . ('/../functions/redirect.php');
 require_once __DIR__ . ('/../functions/session.php');
+require_once __DIR__ . ('/../functions/csrf.php');
 
-define('BASE_URL','http://localhost/dev/it34b_lab');
+define('BASE_URL','http://localhost/it34b_lab');
 
 
 define('DB_HOST','localhost');
-define('DB_NAME','it34b_lab');
+define('DB_NAME','it34b_lab_dbs');
 define('DB_USER','root');
 define('DB_PASS','');
 
